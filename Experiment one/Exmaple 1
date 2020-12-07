@@ -1,48 +1,56 @@
 //Using Java language to solve the problem
 
 import java.util.Scanner; 
-class Solution{
-	private int p;
-	private int q;
+class Solution1{
+	private int p,q;
 	private int result[] = new int[5];
-	private int i;
+	Solution1() {
+		p = -1;
+		q = -1;
+	}
 	void setP(int p){
 		if(p == 1 || p==0)
 			this.p = p;
 		else
-			System.out.println("Please input number 0 or 1.");
+			System.out.print("Input error. ");
 	}
 	void setQ(int q){
 		if(q == 1 || q==0)
 			this.q = q;
 		else
-			System.out.println("Please input number 0 or 1.");
+			System.out.print("Input error. ");
+	}
+	public int getP() {
+		return p;
+	}
+	public int getQ() {
+		return q;
 	}
 	public void function(){
-		//not p
-		if(p == 0) i = 1; else i = 0;
-		result[0] = i;
-		//not q
-		if(q == 0) i =1;else i = 0;
-		//p and q
-		result[1] = p&q;
-		//p or q
-		result[2] = p|q;
-		//p -> q
-		result[3] = (result[0])|q;
-		//p <-> q
-		result[4] = ((result[0])|q)&((i)|p);
+		result[0] = 1-p;//not p
+		result[1] = p&q;//p and q
+		result[2] = p|q;//p or q
+		result[3] = (result[0])|q;//p -> q
+		result[4] = ((result[0])|q)&((1-q)|p);//p <-> q
 		for(int temp:result)
 		System.out.print(temp+" ");
 	}
 
 }
-class test{
+class test1{
     public static void main(String[] args){
     	Scanner scanner = new Scanner(System.in);
-    	Solution s = new Solution();
-    	s.setP(scanner.nextInt());
-    	s.setQ(scanner.nextInt());
+    	Solution1 s = new Solution1();
+    	while(true) {
+    		System.out.println("Please input the value of p (0 or 1)");
+    		s.setP(scanner.nextInt());
+    		if(s.getP() == 0 || s.getP() == 1) break;
+    	}
+    	while(true) {
+    		System.out.println("Please input the value of q (0 or 1)");
+    		s.setQ(scanner.nextInt());
+    		if(s.getQ() == 0 || s.getQ() == 1) break;
+    	}
     	s.function();
 }
 }
