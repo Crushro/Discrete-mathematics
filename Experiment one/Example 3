@@ -1,0 +1,22 @@
+class Solution3{
+	private int p,q,r,s,t;
+	void function() {
+		t = 1;
+		for(p = 0;p<2 ;p++)
+			for(q = 0;q<2 ;q++)
+				for(r = 0;r<2 ;r++)
+					for(s = 0;s<2 ;s++) {
+						if((p|q) == 1 && ((1-p)|(1-r)) == 1 && ((1-s)|(1-t)) ==1 && (s|r) == 1) {
+							System.out.println(p+" "+q+" "+r+" "+s+" "+t);
+							if(p == 1) System.out.println("A stole the watch");
+							else System.out.println("B stole the watch");
+						}
+					}
+	}
+}
+class test3 {
+	public static void main(String[] args){
+	Solution3 s = new Solution3();
+	s.function();
+	}
+}
