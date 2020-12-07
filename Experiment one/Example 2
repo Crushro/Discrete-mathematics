@@ -1,0 +1,18 @@
+class Solution2{
+	private int p,q,r;
+	void function() {
+	for(p = 0;p<2;p++) {
+		for(q = 0;q<2;q++) {
+			for(r = 0;r<2;r++) {
+				System.out.print(p);
+				System.out.print(q);
+				System.out.print(r+" ");
+				System.out.println(((1-p)|q)&r);}}}
+	}
+}
+class test2 {
+	public static void main(String[] args){
+		Solution2 s = new Solution2();
+		s.function();
+	}
+}
