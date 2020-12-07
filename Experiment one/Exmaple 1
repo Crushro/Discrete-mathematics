@@ -1,5 +1,3 @@
-//Using Java language to solve the problem
-
 import java.util.Scanner; 
 class Solution1{
 	private int p,q;
